@@ -3,7 +3,7 @@
 
 " Colors {{{
 syntax enable                   " enable syntax processing
-colorscheme solarized
+colorscheme solarized           " ...
 " }}}
 " Misc {{{
 set ttyfast                     " faster redraw
@@ -15,8 +15,8 @@ set softtabstop=4               " TABs are 4 spaces when editing
 set expandtab                   " turn TABs into spaces
 set shiftwidth=4                " use 4 spaces for indentation
 set modelines=1                 " modeline as the first or last line only
-set filetype indent on          " enable filetype detection
-set filetype plugin on          " load plugins for specific filetypes
+filetype indent on              " enable filetype detection
+filetype plugin on              " load plugins for specific filetypes
 set autoindent                  " copy indent from last line
 set pastetoggle=<f5>            " set paste from insert mode
 " }}}
@@ -31,48 +31,55 @@ set ignorecase                  " ignore case when searching
 set incsearch                   " search as characters are entered
 set hlsearch                    " highlight all matches
 " }}}
-
 " Folding {{{
+"set foldmethod=indent           " fold based on indent level
+set foldnestmax=10              " max depth 10
+set foldenable                  " don't fold files by default on open
+nnoremap <space> za             " toggle folding
+set foldlevelstart=10           " start with fold level of 1
 " }}}
-
 " Line Shortcuts {{{
+nnoremap j gj                   " move down by vertical line
+nnoremap k gk                   " move up by vertical line
 " }}}
-
 " Leader Shortcuts {{{
 " }}}
-
 " Powerline {{{
 " }}}
-
 " CtrlP {{{
 " }}}
-
 " NERDTree {{{
 " }}}
-
 " Syntastic {{{
 " }}}
-
 " Launch Config {{{
 " }}}
-
-"" Tmux {{{
-"" }}}
-
+" Tmux {{{
+" }}}
 " MacVim {{{
 " }}}
-
 " AutoGroups {{{
 " }}}
-
 " Backups {{{
 " }}}
-
 " Tips {{{
 " :verbose set foo?             " show where foo was last set
 " V=                            " select text and reformat
 " :set rightleft                " goofy
+" \r                            " newline escape sequence (ex: 's/,/\r')
+}}}
+" The Future {{{
+" LOVE this .vimrc (6 lines long)
+" https://github.com/henrik/dotfiles/blob/master/vimrc
+" let mapleader = ","
+" source ~/.vim/config/plugins.vim
+" source ~/.vim/config/settings.vim
+" source ~/.vim/config/statusline.vim
+" source ~/.vim/config/mappings.vim
+" source ~/.vim/config/snippets.vim
+
 " }}}
+
 " vim:foldmethod=marker:foldlevel=0
 
 
@@ -1595,3 +1602,5 @@ endif " has("autocmd")
 " Note that the colon within the value of "comments" needs to
 " be escaped with a backslash!  (Thanks, Thomas!)
 "       vim:tw=70 et sw=4 comments=\:\"
+
+" vim:foldmethod=marker:foldlevel=0
