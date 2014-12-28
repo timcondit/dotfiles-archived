@@ -12,14 +12,13 @@ set background=light            " affects colorscheme choices
 " Misc {{{
 set ttyfast                     " faster redraw
 set backspace=indent,eol,start  " backspace over everything in insert mode
-"set mousehide                   " hide mouse when typing (Q: GUI only?)
+"set mousehide                   " hide mouse when typing (GUI only)
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4                   " TABs are 4 spaces (TODO: use 8 instead?)
 set softtabstop=4               " TABs are 4 spaces when editing
 set expandtab                   " turn TABs into spaces
 set shiftwidth=4                " use 4 spaces for indentation
-set modelines=1                 " modeline as the first or last line only
 filetype indent on              " enable filetype detection
 filetype plugin on              " load plugins for specific filetypes
 set autoindent                  " copy indent from last line
@@ -27,6 +26,8 @@ set pastetoggle=<f5>            " set paste from insert mode
 "set showtabline                 " TODO
 " }}}
 " UI Layout {{{
+set modeline                    " enable modelines at top or bottom of file
+set modelines=1                 " modeline as the first or last line only
 set showcmd                     " show incomplete commands like "y23dd
 set showmatch                   " briefly jump to matching brackets
 set showmode                    " show Insert, Replace or Visual modes
@@ -56,8 +57,10 @@ nnoremap <space> za             " toggle folding
 set foldlevelstart=10           " start with fold level of 1
 " }}}
 " Line Shortcuts {{{
-nnoremap j gj                   " move down by vertical line
-nnoremap k gk                   " move up by vertical line
+"
+" These two seem to break things in ways I don't understand yet
+"nnoremap j gj                   " move down by vertical line
+"nnoremap k gk                   " move up by vertical line
 nnoremap <up> <C-Y>             " make up- and down-arrow ...
 nnoremap <down> <C-E>           " ... scroll like a browser
 " }}}
@@ -114,7 +117,7 @@ augroup END
 set history=500                 " save more history (default 20)
 " }}}
 " Tips {{{
-" :verbose set foo?             " show where foo was last set
+" :verbose set foo?             " show where foo was last set (AWESOME)
 " V=                            " select text and reformat
 " :set rightleft                " goofy
 " \r                            " newline escape sequence (ex: 's/,/\r')
@@ -123,10 +126,9 @@ set history=500                 " save more history (default 20)
 " See vimrc_maybe_later
 " }}}
 " Regex {{{
-nnoremap / /\v                  " turn off Vim regex handling (\very magic)
-vnoremap / /\v                  " Steve Losh "coming home to Vim"
+"nnoremap / /\v                  " turn off Vim regex handling (\very magic)
+"vnoremap / /\v                  " Steve Losh "coming home to Vim"
 " }}}
-
 " Powerline {{{
 " }}}
 " CtrlP {{{
